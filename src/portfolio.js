@@ -8,12 +8,11 @@ const about = {
   // all the properties are optional - can be left empty or deleted
   name: 'Asfaqe Hussain',
   role: 'React Native Developer',
-  description:
-    'Adipisicing sit fugit ullam unde aliquid sequi Facilis soluta facilis perspiciatis corporis nulla aspernatur. Autem eligendi rerum delectus modi quisquam? Illo ut quasi nemo ipsa cumque perspiciatis! Maiores minima consectetur.',
+  description: "I'm Experienced React Native Developer skilled in building cross-platform apps. Proficient in JavaScript and TypeScript, with a focus on seamless user experiences. Passionate about new technologies and open-source contributions.",  
   resume: 'https://example.com',
   social: {
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com',
+    linkedin: 'https://linkedin.com/asfaqehussain',
+    github: 'https://github.com/asfaqehussain',
   },
 }
 
@@ -21,42 +20,50 @@ const projects = [
   // projects can be added an removed
   // if there are no projects, Projects section won't show up
   {
-    name: 'Project 1',
+    name: 'Collabstr',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['React Native', 'Expo', 'Firebase'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+      'Collabstr is an influencer marketing platform that allows brands to connect with influencers and collaborate on campaigns.',
+    stack: ['React Native', 'Redux', 'Stripe', 'Deeplinks', 'Websockets'],
+    // sourceCode: 'https://github.com',
+    // livePreview: 'https://github.com',
   },
   {
-    name: 'Project 2',
+    name: 'OtterBoutMyDay',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['React Native', 'Expo', 'Firebase'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+      'Otter Bout My Day was created with the goal of streamlining communication for both parents and their child’s therapists. We wanted to offer parents a session overview that therapists could quickly complete. Therapists can quickly upload session videos and photos for access by parents',
+    stack: ['React Native', 'Firebase', 'React native IAP', 'Socket.IO'],
+    livePreview: 'https://apps.apple.com/us/app/otterboutmyday/id6479358174',
   },
   {
-    name: 'Project 3',
+    name: 'Neta App',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['React Native', 'Expo', 'Firebase'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+      'A trivia app for the teenager to play quiz and earn coins and share their rewards and achievement on social media. ',
+    stack: ['React Native', 'RevenueCat', 'Animations', 'Social Media Sharing', 'Remote Config'],
+    // sourceCode: 'https://github.com',
+    livePreview: 'https://play.google.com/store/apps/details?id=com.neta.app',
   },
 ]
 
 const skills = [
-  // skills can be added or removed
-  // if there are no skills, Skills section won't show up
   'React Native',
-  'Expo',
+  'JavaScript/TypeScript',
+  'Redux',
   'Firebase',
-  'Material UI',
-  'Git',
+  'Rest API',
+  'AWS S3',
+  'Stripe',
+  'RevenueCat',
+  'Dooboolab',
+  'SQLite',
+  'GraphQL',
+  'Unit testing',
+  'Jira',
+  'Android Studio',
+  'Xcode',
+  'Postman',
+  'Chrome Debugger',
+  'Sourcetree',
   'CI/CD',
-  'Jest',
-  'Enzyme',
 ]
 
 const contact = {
