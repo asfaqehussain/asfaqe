@@ -9,7 +9,7 @@ const about = {
   name: 'Asfaqe Hussain',
   role: 'React Native Developer',
   description: "I'm Experienced React Native Developer skilled in building cross-platform apps. Proficient in JavaScript and TypeScript, with a focus on seamless user experiences. Passionate about new technologies and open-source contributions.",  
-  resume: 'https://example.com',
+  resume: 'https://drive.google.com/file/d/1O3a2DrBlxrVLbLhNLqqgdWtZzuillbO3/view?usp=drive_link',
   social: {
     linkedin: 'https://linkedin.com/asfaqehussain',
     github: 'https://github.com/asfaqehussain',
