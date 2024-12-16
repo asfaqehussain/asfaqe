@@ -11,7 +11,7 @@ const about = {
   description: "I'm Experienced React Native Developer skilled in building cross-platform apps. Proficient in JavaScript and TypeScript, with a focus on seamless user experiences. Passionate about new technologies and open-source contributions.",  
   resume: 'https://drive.google.com/file/d/1O3a2DrBlxrVLbLhNLqqgdWtZzuillbO3/view?usp=drive_link',
   social: {
-    linkedin: 'https://linkedin.com/asfaqehussain',
+    linkedin: 'https://linkedin.com/in/asfaqehussain',
     github: 'https://github.com/asfaqehussain',
   },
 }
