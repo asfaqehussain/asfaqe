@@ -95,7 +95,7 @@ export default function Projects() {
                                         Tech Stack
                                     </span>
                                 </div>
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-2 justify-center">
                                     {project.tags.map((tag) => (
                                         <span
                                             key={tag}
