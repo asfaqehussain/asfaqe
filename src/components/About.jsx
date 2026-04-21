@@ -7,7 +7,7 @@ import { personalInfo } from '../data/portfolioData';
 
 const stats = [
     { icon: FiCode, value: '10+', label: 'Projects' },
-    { icon: FiCoffee, value: '4+', label: 'Years Exp' },
+    { icon: FiCoffee, value: '~5', label: 'Years Exp' },
     { icon: FiZap, value: '3+', label: 'Technologies' },
     { icon: FiHeart, value: '∞', label: 'Passion' },
 ];

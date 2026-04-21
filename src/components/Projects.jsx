@@ -44,7 +44,7 @@ export default function Projects() {
                                     <FiFolder className="w-6 h-6 text-indigo-500" />
                                 </div>
 
-                                <div className="flex items-center gap-1">
+{/* <div className="flex items-center gap-1">
                                     <a
                                         href={project.github}
                                         target="_blank"
@@ -67,7 +67,7 @@ export default function Projects() {
                                     >
                                         <FiExternalLink className="w-4 h-4" />
                                     </a>
-                                </div>
+                                </div> */}
                             </div>
 
                             {/* Project number */}
