@@ -23,8 +23,8 @@ export default {
                     '50%': { transform: 'translateY(-20px)' },
                 },
                 glow: {
-                    '0%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.5)' },
-                    '100%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.8)' },
+                    '0%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.5)' },
+                    '100%': { boxShadow: '0 0 40px rgba(6, 182, 212, 0.8)' },
                 },
             },
         },

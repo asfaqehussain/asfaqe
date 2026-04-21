@@ -5,7 +5,7 @@ export const personalInfo = {
     email: "asfaqeh@gmail.com",
     location: "Ahmedabad, Gujarat, India",
     bio: "Software Engineer with about 5 years of experience building production-grade mobile applications. Specializing in cross-platform mobile development with React Native, real-time systems, offline-first architecture, and AI-driven features with end-to-end deployment on Android and iOS.",
-    resumeUrl: "https://drive.google.com/file/d/1i9b7xXItSlv-wEkCfdOYooWSOISJAd2M/view?usp=drive_link",
+    resumeUrl: "https://drive.google.com/file/d/154BzwlHeNJbSFRA3-rS3qcAGQE3xk7in/view?usp=sharing",
     social: {
         github: "https://github.com/asfaqehussain",
         linkedin: "https://linkedin.com/in/asfaqehussain",

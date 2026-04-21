@@ -12,13 +12,13 @@ export default function Awards() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <span className="text-sm font-mono text-indigo-500 uppercase tracking-wider">
+                    <span className="text-sm font-mono text-emerald-500 uppercase tracking-wider">
                         Recognition
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold mt-2">
                         Award & <span className="gradient-text">Achievement</span>
                     </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
+                    <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 mx-auto mt-4 rounded-full" />
                 </motion.div>
 
                 {awards.length === 1 ? (
@@ -31,15 +31,15 @@ export default function Awards() {
                     >
                         <div className="relative glass rounded-3xl p-10 md:p-12 
                           border border-gray-200/60 dark:border-white/10
-                          hover:border-indigo-500/30
+                          hover:border-emerald-500/30
                           transition-colors duration-300">
 
                             {/* Subtle corner accents instead of glow */}
                             <div className="absolute top-0 left-0 w-20 h-20 
-                            border-t-2 border-l-2 border-indigo-500/30 
+                            border-t-2 border-l-2 border-emerald-500/30 
                             rounded-tl-3xl" />
                             <div className="absolute bottom-0 right-0 w-20 h-20 
-                            border-b-2 border-r-2 border-purple-500/30 
+                            border-b-2 border-r-2 border-cyan-500/30 
                             rounded-br-3xl" />
 
                             <div className="flex flex-col items-center text-center">
@@ -50,7 +50,7 @@ export default function Awards() {
                                     viewport={{ once: true }}
                                     transition={{ type: "spring", duration: 0.8, delay: 0.2 }}
                                     className="p-5 rounded-2xl 
-                           bg-gradient-to-br from-yellow-400 via-orange-500 to-pink-500 
+                           bg-gradient-to-br from-yellow-400 via-orange-500 to-teal-500 
                            shadow-lg shadow-orange-500/20 mb-6"
                                 >
                                     <FiAward className="w-10 h-10 text-white" />
@@ -119,7 +119,7 @@ export default function Awards() {
                                 whileHover={{ y: -4 }}
                                 className="glass rounded-2xl p-6 
                          border border-gray-200/60 dark:border-white/10
-                         hover:border-indigo-500/30
+                         hover:border-emerald-500/30
                          transition-colors duration-300"
                             >
                                 <div className="flex items-start gap-4">
@@ -130,11 +130,11 @@ export default function Awards() {
                                         <div className="flex items-start justify-between gap-2 mb-1 flex-wrap">
                                             <h3 className="text-lg font-bold">{award.title}</h3>
                                             <span className="text-xs font-mono px-2 py-1 rounded-full
-                                    bg-indigo-500/10 text-indigo-500">
+                                    bg-emerald-500/10 text-emerald-500">
                                                 {award.year}
                                             </span>
                                         </div>
-                                        <p className="text-sm text-indigo-500 font-semibold mb-2">{award.org}</p>
+                                        <p className="text-sm text-emerald-500 font-semibold mb-2">{award.org}</p>
                                         <p className="text-sm text-gray-600 dark:text-gray-400">
                                             {award.description}
                                         </p>

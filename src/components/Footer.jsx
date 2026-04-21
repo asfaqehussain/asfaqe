@@ -21,7 +21,7 @@ export default function Footer() {
                             target="_blank"
                             rel="noreferrer"
                             className="p-2.5 rounded-full glass hover:scale-110 
-                       hover:text-indigo-500 transition-all"
+                       hover:text-emerald-500 transition-all"
                         >
                             <Icon className="w-4 h-4" />
                         </a>

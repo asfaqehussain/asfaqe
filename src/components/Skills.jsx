@@ -11,13 +11,13 @@ export default function Skills() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <span className="text-sm font-mono text-indigo-500 uppercase tracking-wider">
+                    <span className="text-sm font-mono text-emerald-500 uppercase tracking-wider">
                         Tech Stack
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold mt-2">
                         Skills & <span className="gradient-text">Expertise</span>
                     </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
+                    <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 mx-auto mt-4 rounded-full" />
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -31,7 +31,7 @@ export default function Skills() {
                             whileHover={{ y: -4 }}
                             className="glass rounded-2xl p-6 
                        border border-gray-200/60 dark:border-white/10
-                       hover:border-indigo-500/30
+                       hover:border-emerald-500/30
                        transition-colors duration-300"
                         >
                             <h3 className="text-lg font-bold mb-4 gradient-text">

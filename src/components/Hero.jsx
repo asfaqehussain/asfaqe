@@ -1,13 +1,52 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { FiDownload, FiGithub, FiLinkedin, FiTwitter, FiMail, FiArrowDown } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
+import CursorTrail from './CursorTrail';
 
 export default function Hero() {
+    const cursorX = useMotionValue(-100);
+    const cursorY = useMotionValue(-100);
+    const springX = useSpring(cursorX, { stiffness: 200, damping: 20 });
+    const springY = useSpring(cursorY, { stiffness: 200, damping: 20 });
+
+    const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        cursorX.set(e.clientX - rect.left);
+        cursorY.set(e.clientY - rect.top);
+    };
+
     return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center section-padding overflow-hidden">
+        <section
+            id="home"
+            className="relative min-h-screen flex items-center justify-center section-padding overflow-hidden cursor-none"
+            onMouseMove={handleMouseMove}
+        >
+            {/* ── Cursor trail canvas (scoped to hero) ── */}
+            <CursorTrail />
+
+            {/* ── Spring-animated custom cursor dot ── */}
+            <motion.div
+                className="pointer-events-none absolute z-30 hidden md:block"
+                style={{
+                    left: springX,
+                    top: springY,
+                    x: '-50%',
+                    y: '-50%',
+                }}
+            >
+                {/* Outer glowing ring */}
+                <div className="w-10 h-10 rounded-full border border-emerald-400/60
+                    shadow-[0_0_12px_3px_rgba(16,185,129,0.35)]
+                    flex items-center justify-center">
+                    {/* Inner dot */}
+                    <div className="w-2 h-2 rounded-full bg-emerald-400
+                        shadow-[0_0_8px_2px_rgba(16,185,129,0.8)]" />
+                </div>
+            </motion.div>
+
             {/* Background blobs */}
-            <div className="blob w-96 h-96 bg-indigo-500 top-20 -left-20" />
-            <div className="blob w-96 h-96 bg-purple-500 bottom-20 -right-20" />
+            <div className="blob w-96 h-96 bg-emerald-500 top-20 -left-20" />
+            <div className="blob w-96 h-96 bg-cyan-500 bottom-20 -right-20" />
             <div className="absolute inset-0 grid-bg" />
 
             <div className="relative z-10 max-w-6xl mx-auto text-center">
@@ -64,9 +103,9 @@ export default function Hero() {
                         href={personalInfo.resumeUrl}
                         download
                         className="group flex items-center gap-2 px-6 py-3 rounded-full 
-                     bg-gradient-to-r from-indigo-500 to-purple-500 text-white
-                     font-semibold shadow-lg shadow-indigo-500/30
-                     hover:shadow-xl hover:shadow-indigo-500/50 hover:scale-105
+                     bg-gradient-to-r from-emerald-500 to-cyan-500 text-white
+                     font-semibold shadow-lg shadow-emerald-500/30
+                     hover:shadow-xl hover:shadow-emerald-500/50 hover:scale-105
                      transition-all duration-300"
                     >
                         <FiDownload className="group-hover:animate-bounce" />
@@ -103,7 +142,7 @@ export default function Hero() {
                      font-semibold hover:scale-105 hover:shadow-lg
                      transition-all duration-300"
                     >
-                        <FiMail className="text-pink-500" />
+                        <FiMail className="text-teal-500" />
                         Contact
                     </a>
                 </motion.div>

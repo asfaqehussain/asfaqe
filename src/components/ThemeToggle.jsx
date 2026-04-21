@@ -11,7 +11,7 @@ export default function ThemeToggle() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="relative p-3 rounded-full glass hover:shadow-lg 
-                 hover:shadow-indigo-500/30 transition-all"
+                 hover:shadow-emerald-500/30 transition-all"
             aria-label="Toggle theme"
         >
             <motion.div
@@ -23,7 +23,7 @@ export default function ThemeToggle() {
                 {theme === 'dark' ? (
                     <FiSun className="w-5 h-5 text-yellow-400" />
                 ) : (
-                    <FiMoon className="w-5 h-5 text-indigo-600" />
+                    <FiMoon className="w-5 h-5 text-emerald-600" />
                 )}
             </motion.div>
         </motion.button>

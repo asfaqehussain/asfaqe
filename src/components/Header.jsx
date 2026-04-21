@@ -45,12 +45,12 @@ export default function Header() {
                             <a
                                 href={link.href}
                                 className="text-sm font-medium text-gray-700 dark:text-gray-300
-                         hover:text-indigo-600 dark:hover:text-indigo-400
+                         hover:text-emerald-600 dark:hover:text-emerald-400
                          transition-colors relative group"
                             >
                                 {link.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 
-                               bg-gradient-to-r from-indigo-500 to-purple-500
+                               bg-gradient-to-r from-emerald-500 to-cyan-500
                                group-hover:w-full transition-all duration-300" />
                             </a>
                         </li>
@@ -81,7 +81,7 @@ export default function Header() {
                             href={link.href}
                             onClick={() => setMenuOpen(false)}
                             className="block py-3 px-4 text-gray-700 dark:text-gray-300
-                       hover:bg-indigo-500/10 rounded-lg transition-colors"
+                       hover:bg-emerald-500/10 rounded-lg transition-colors"
                         >
                             {link.name}
                         </a>
