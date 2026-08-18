@@ -1,92 +1,225 @@
 export const personalInfo = {
     name: "Asfaqe Hussain",
-    title: "Software Engineer",
-    tagline: "Building scalable mobile apps with real-time, offline-first & AI-driven systems",
+    title: "Sr. Software Engineer",
+    tagline: "Building scalable mobile applications with React Native, real-time systems, offline-first architecture & AI",
     email: "asfaqeh@gmail.com",
     location: "Ahmedabad, Gujarat, India",
-    bio: "Software Engineer with about 5 years of experience building production-grade mobile applications. Specializing in cross-platform mobile development with React Native, real-time systems, offline-first architecture, and AI-driven features with end-to-end deployment on Android and iOS.",
-    resumeUrl: "https://drive.google.com/file/d/154BzwlHeNJbSFRA3-rS3qcAGQE3xk7in/view?usp=sharing",
+
+    bio: "Mobile Software Engineer with 5+ years of experience specializing in React Native and TypeScript, building scalable, reliable, and user-centric applications for Android and iOS. Experienced in offline-first architecture, real-time systems, geolocation, maps, API integrations, AI-powered features, payments, and end-to-end mobile application delivery.",
+
+    resumeUrl:
+        "https://drive.google.com/file/d/1ydsRo9wpxAXzhHrXDWoD4gSiCgw21oYO/view?usp=sharing",
+
+    portfolioUrl: "https://asfaqe.vercel.app/",
+
     social: {
         github: "https://github.com/asfaqehussain",
         linkedin: "https://linkedin.com/in/asfaqehussain",
     },
+
     currentOrg: {
         name: "Bacancy Technology Pvt. Ltd.",
-        role: "Software Engineer - Mobile",
+        role: "Sr. Software Engineer",
         duration: "Feb 2025 - Present",
+
         responsibilities: [
-            "Developing scalable cross-platform mobile applications using React Native.",
-            "Working on real-time systems, offline-first architecture, and AI-driven features.",
-            "Managing end-to-end development and deployment for Android and iOS.",
+            "Own end-to-end mobile development for cross-platform React Native applications, contributing to architecture decisions and scalable solutions.",
+            "Drive technical discussions, code quality practices, and development standards across the mobile workflow.",
+            "Collaborate with product, design, backend teams, and clients to translate requirements into technical solutions and deliver features from development to production.",
+            "Manage Android and iOS release workflows, including build configuration, signing, deployment, and resolving App Store and Google Play issues.",
         ],
     },
 };
 
 
-
 export const projects = [
     {
         id: 1,
-        title: "Field Service Management Platform",
-        description: "Offline-first mobile app for managing work orders, inspections, and real-time technician workflows with GPS tracking and backend integration.",
-        image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800",
-        tags: ["React Native", "Node.js", "Express", "SQLite", "React Query"],
+        title: "Total Service | Field Service Management",
+        description:
+            "Offline-first field service management platform for work orders, inspections, GPS-based workflows, and technician operations with local persistence and backend synchronization.",
+
+        image:
+            "https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800",
+
+        tags: [
+            "React Native",
+            "TypeScript",
+            "Node.js",
+            "Express",
+            "SQLite",
+            "React Query",
+            "Offline-first",
+            "Background Location",
+        ],
+
         github: "#",
-        live: "https://apps.apple.com/ca/app/total-service-mobile-tsm/id6761250341",
+
+        live:
+            "https://apps.apple.com/ca/app/total-service-mobile-tsm/id6761250341",
     },
+
     {
         id: 2,
         title: "AI Productivity Platform",
-        description: "AI-powered mobile app integrating tasks, notes, email, and chat with real-time updates and intelligent automation.",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
-        tags: ["React Native", "AI", "WebSockets", "React Query"],
+        description:
+            "AI-powered productivity application with intelligent workflows for content summarization, smart replies, automated task and event generation, real-time chat, and notifications.",
+
+        image:
+            "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+
+        tags: [
+            "React Native",
+            "AI",
+            "WebSockets",
+            "React Query",
+            "Real-time Systems",
+        ],
+
         github: "#",
-        live: "https://apps.apple.com/gb/app/warpspeed/id6744610457",
+
+        live:
+            "https://apps.apple.com/gb/app/warpspeed/id6744610457",
     },
+
     {
         id: 3,
         title: "Gold Trading & Delivery Platform",
-        description: "Real-time tracking and delivery system with background location tracking, navigation, and live driver updates.",
-        image: "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?w=800",
-        tags: ["React Native", "WebSockets", "Google Maps", "Background Location"],
+        description:
+            "Real-time gold trading and delivery platform with driver tracking, background location, maps, multi-stop routing, geofencing, and live location updates.",
+
+        image:
+            "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?w=800",
+
+        tags: [
+            "React Native",
+            "WebSockets",
+            "Maps",
+            "Background Location",
+            "Geolocation",
+        ],
+
         github: "#",
-        live: "https://play.google.com/store/apps/details?id=com.goldbank.premiumcollection.app",
+
+        live:
+            "https://play.google.com/store/apps/details?id=com.goldbank.premiumcollection.app",
     },
+
     {
         id: 4,
         title: "Collabstr Mobile App",
-        description: "Influencer marketplace app with real-time messaging, creator profiles, and Stripe-based payment integration.",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800",
-        tags: ["React Native", "Redux", "Stripe", "WebSockets", "AWS S3"],
+        description:
+            "Production React Native creator marketplace app built from the ground up, reaching 100K+ downloads, with real-time chat, creator discovery, media-rich content, and Stripe payments.",
+
+        image:
+            "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800",
+
+        tags: [
+            "React Native",
+            "Redux",
+            "Stripe",
+            "WebSockets",
+            "AWS S3",
+            "Deep Linking",
+        ],
+
         github: "#",
-        live: "https://collabstr.com",
+
+        live:
+            "https://play.google.com/store/apps/details?id=com.collabstr",
+
+        liveAlt:
+            "https://apps.apple.com/us/app/collabstr/id6503245507",
     },
+
     {
         id: 5,
         title: "OtterBoutMyDay",
-        description: "Subscription-based lifestyle app with in-app purchases via React Native IAP and real-time features using Socket.IO. Optimized API calls and rendering logic, improving performance by 30%.",
-        image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800",
-        tags: ["React Native", "React Native IAP", "Socket.IO", "Subscriptions"],
+        description:
+            "Mobile application with therapy notes, sessions, at-home activities, subscription-based in-app purchases, and real-time features using Socket.IO.",
+
+        image:
+            "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800",
+
+        tags: [
+            "React Native",
+            "React Native IAP",
+            "Socket.IO",
+            "Subscriptions",
+        ],
+
         github: "#",
-        live: "https://apps.apple.com",
-        liveAlt: "https://play.google.com",
+
+        live:
+            "https://apps.apple.com/us/app/otterboutmyday/id6479358174",
     },
+
     {
         id: 6,
-        title: "Neta App",
-        description: "Social-first mobile app with RevenueCat subscription management, Instagram Stories & WhatsApp sharing, remote config, and rich animations. Improved performance by 40% through refactoring and reusable components.",
-        image: "https://images.unsplash.com/photo-1611162616305-c69b3396de6c?w=800",
-        tags: ["React Native", "RevenueCat", "Animations", "Remote Config", "Social Sharing"],
+        title: "Sugar Wallet",
+        description:
+            "Digital rewards and fintech platform with reward and referral modules, real-time gold price charts, OTP authentication, protected routes, and a React Native WebView application.",
+
+        image:
+            "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800",
+
+        tags: [
+            "Next.js",
+            "React",
+            "Redux-Saga",
+            "React Query",
+            "Chart.js",
+            "Tailwind CSS",
+            "JWT",
+        ],
+
         github: "#",
-        live: "https://play.google.com",
+
+        live:
+            "https://www.sugarwallet.co.nz",
     },
+
     {
         id: 7,
         title: "Hotel Management App",
-        description: "Enterprise hotel management app with a ticketing system for inspection issues, offline support via local storage, push notifications, and encrypted data handling using CryptoJS.",
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
-        tags: ["React Native", "Redux", "Firebase", "Local Storage", "CryptoJS"],
+        description:
+            "Enterprise hotel management application with ticketing workflows for inspection issues, offline support, push notifications, and encrypted local data handling.",
+
+        image:
+            "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
+
+        tags: [
+            "React Native",
+            "Redux",
+            "Firebase",
+            "Local Storage",
+            "CryptoJS",
+        ],
+
         github: "#",
+
+        live: "#",
+    },
+
+    {
+        id: 8,
+        title: "Dosage App",
+        description:
+            "Healthcare application with dosage scheduling, reminders, offline access, and PDF downloads for healthcare information sharing.",
+
+        image:
+            "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
+
+        tags: [
+            "React Native",
+            "Redux",
+            "SQL",
+            "Firebase",
+            "Offline Support",
+        ],
+
+        github: "#",
+
         live: "#",
     },
 ];
@@ -96,16 +229,19 @@ export const experience = [
     {
         id: 1,
         company: "Bacancy Technology Pvt. Ltd.",
-        role: "Software Engineer - Mobile",
+        role: "Sr. Software Engineer",
         location: "Ahmedabad",
         duration: "Feb 2025 – Present",
         current: true,
+
         highlights: [
-            "Developing scalable cross-platform mobile applications using React Native.",
-            "Working on real-time systems, offline-first architecture, and AI-driven features.",
-            "Managing end-to-end development and deployment for Android and iOS.",
+            "Own end-to-end mobile development for cross-platform React Native applications, contributing to architecture decisions and scalable solutions.",
+            "Drive technical discussions, code quality practices, and development standards across the mobile workflow.",
+            "Collaborate with product, design, backend teams, and clients to translate requirements into technical solutions and deliver features from development to production.",
+            "Manage Android and iOS release workflows, including build configuration, signing, deployment, and resolving App Store and Google Play issues.",
         ],
     },
+
     {
         id: 2,
         company: "WebMavericks SoftCoders Pvt. Ltd.",
@@ -113,36 +249,119 @@ export const experience = [
         location: "Jaipur",
         duration: "Oct 2023 – Jan 2025",
         current: false,
+
         highlights: [
-            "Built and maintained cross-platform mobile apps with React Native.",
-            "Implemented in-app purchases using RevenueCat and React Native IAP for subscription monetization.",
-            "Integrated real-time features via Socket.IO and improved app performance by up to 40%.",
+            "Led and collaborated with development teams across 6+ mobile application projects, supporting technical planning, implementation, and delivery.",
+            "Analyzed project requirements and provided technical estimates to support predictable delivery and client expectations.",
+            "Managed direct client communication, translating business requirements into actionable technical solutions.",
+            "Coordinated deployment of 4+ mobile applications to the App Store and Google Play Store, including resolving release and review issues.",
         ],
     },
+
     {
         id: 3,
         company: "WeblineIndia Pvt. Ltd.",
-        role: "Jr. Developer",
+        role: "Jr. Software Developer",
         location: "Ahmedabad",
         duration: "Aug 2021 – Sept 2023",
         current: false,
+
         highlights: [
-            "Developed mobile applications for Android & iOS with robust functionality and user-friendly interfaces.",
-            "Collaborated in an agile team environment, enhancing project delivery and timely releases.",
-            "Optimized app performance through clean code practices, achieving 30% reduction in load times and 20% increase in user retention.",
+            "Developed cross-platform mobile applications for Android and iOS using React Native, focusing on maintainable and reliable implementations.",
+            "Collaborated with cross-functional teams in an agile environment to deliver features within project timelines.",
+            "Optimized application performance through improved rendering, API usage, and maintainable code, reducing load times by 30%.",
         ],
     },
 ];
 
-export const skills = [
-    { category: "Mobile Development", items: ["React Native", "JavaScript", "TypeScript"] },
-    { category: "State & Data", items: ["Redux", "Zustand", "React Query"] },
-    { category: "Backend & APIs", items: ["Node.js", "Express", "REST APIs", "GraphQL"] },
-    { category: "Real-time & Features", items: ["WebSockets", "Offline-first", "Background Location", "Push Notifications"] },
-    { category: "Payments", items: ["Stripe", "RevenueCat", "React Native IAP"] },
-    { category: "Tools", items: ["Android Studio", "Xcode", "Firebase", "CI/CD", "Git", "Cursor", "Claude"] },
-];
 
+export const skills = [
+    {
+        category: "Core",
+        items: [
+            "React Native",
+            "React.js",
+            "TypeScript",
+            "JavaScript",
+            "Next.js",
+        ],
+    },
+
+    {
+        category: "Architecture",
+        items: [
+            "Offline-first",
+            "Real-time Systems",
+            "Clean Architecture",
+            "Modularization",
+        ],
+    },
+
+    {
+        category: "State Management",
+        items: [
+            "Redux",
+            "Redux-Saga",
+            "Zustand",
+        ],
+    },
+
+    {
+        category: "Data & APIs",
+        items: [
+            "TanStack Query",
+            "REST APIs",
+            "Node.js",
+            "Express",
+            "GraphQL",
+        ],
+    },
+
+    {
+        category: "Mobile",
+        items: [
+            "Maps",
+            "Geolocation",
+            "Background Location",
+            "Push Notifications",
+            "Deep Linking",
+        ],
+    },
+
+    {
+        category: "Payments",
+        items: [
+            "Stripe",
+            "RevenueCat",
+            "React Native IAP",
+        ],
+    },
+
+    {
+        category: "Cloud & Tools",
+        items: [
+            "AWS S3",
+            "Firebase",
+            "Jest",
+            "Sentry",
+            "Git",
+            "Postman",
+            "Android Studio",
+            "Xcode",
+            "CI/CD",
+        ],
+    },
+
+    {
+        category: "AI & Development",
+        items: [
+            "AI APIs",
+            "Claude",
+            "Cursor",
+            "Codex",
+        ],
+    },
+];
 
 
 export const awards = [
@@ -150,7 +369,7 @@ export const awards = [
         title: "Employee of the Quarter",
         org: "Bacancy Technology Pvt. Ltd.",
         year: "2026",
-        description: "Recognized for ownership, performance, and contribution to mobile application development.",
+        description:
+            "Recognized for ownership, performance, and contribution to mobile application development.",
     },
 ];
-
