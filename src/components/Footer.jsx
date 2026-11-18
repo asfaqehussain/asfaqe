@@ -1,29 +1,27 @@
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiHeart } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
+
+const links = [
+    { label: 'GitHub', href: personalInfo.social.github },
+    { label: 'LinkedIn', href: personalInfo.social.linkedin },
+    { label: 'Email', href: `mailto:${personalInfo.email}` },
+];
 
 export default function Footer() {
     return (
-        <footer className="border-t border-gray-200 dark:border-white/10 py-10 px-6">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-                <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center gap-2">
-                    Built with <FiHeart className="text-red-500 animate-pulse" /> by {personalInfo.name} © {new Date().getFullYear()}
+        <footer className="border-t border-line py-10">
+            <div className="shell flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm text-muted">
+                    {personalInfo.name} © {new Date().getFullYear()}
                 </p>
-                <div className="flex items-center gap-3">
-                    {[
-                        { icon: FiGithub, href: personalInfo.social.github },
-                        { icon: FiLinkedin, href: personalInfo.social.linkedin },
-                        { icon: FiTwitter, href: personalInfo.social.twitter },
-                        { icon: FiMail, href: `mailto:${personalInfo.email}` },
-                    ].map(({ icon: Icon, href }, i) => (
+                <div className="flex flex-wrap gap-x-6">
+                    {links.map((link) => (
                         <a
-                            key={i}
-                            href={href}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="p-2.5 rounded-full glass hover:scale-110 
-                       hover:text-emerald-500 transition-all"
+                            key={link.label}
+                            href={link.href}
+                            {...(link.href.startsWith('mailto:') ? {} : { target: '_blank', rel: 'noreferrer' })}
+                            className="inline-flex min-h-11 items-center text-sm text-muted transition-colors duration-150 hover:text-fg"
                         >
-                            <Icon className="w-4 h-4" />
+                            {link.label}
                         </a>
                     ))}
                 </div>

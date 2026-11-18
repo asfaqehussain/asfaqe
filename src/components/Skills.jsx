@@ -1,56 +1,30 @@
-import { motion } from 'framer-motion';
 import { skills } from '../data/portfolioData';
+import Reveal from './Reveal';
 
 export default function Skills() {
     return (
-        <section id="skills" className="section-padding relative">
-            <div className="max-w-7xl mx-auto relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <span className="text-sm font-mono text-emerald-500 uppercase tracking-wider">
-                        Tech Stack
-                    </span>
-                    <h2 className="text-4xl md:text-5xl font-bold mt-2">
-                        Skills & <span className="gradient-text">Expertise</span>
-                    </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 mx-auto mt-4 rounded-full" />
-                </motion.div>
+        <section id="skills" className="scroll-mt-20 py-16 md:py-24">
+            <div className="shell">
+                <Reveal>
+                    <p className="text-sm text-signal">Toolkit</p>
+                    <h2 className="mt-2 font-display text-3xl font-semibold leading-[1.15] md:text-4xl">Skills</h2>
+                </Reveal>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {skills.map((skillGroup, idx) => (
-                        <motion.div
-                            key={skillGroup.category}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1 }}
-                            whileHover={{ y: -4 }}
-                            className="glass rounded-2xl p-6 
-                       border border-gray-200/60 dark:border-white/10
-                       hover:border-emerald-500/30
-                       transition-colors duration-300"
-                        >
-                            <h3 className="text-lg font-bold mb-4 gradient-text">
-                                {skillGroup.category}
-                            </h3>
-                            <div className="flex flex-wrap gap-2 justify-center">
-                                {skillGroup.items.map((item) => (
-                                    <span
+                <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    {skills.map((group, index) => (
+                        <Reveal key={group.category} delay={index * 0.05} className="panel p-5">
+                            <h3 className="text-base font-semibold">{group.category}</h3>
+                            <ul className="mt-4 flex flex-wrap gap-2">
+                                {group.items.map((item) => (
+                                    <li
                                         key={item}
-                                        className="text-sm px-3 py-1.5 rounded-lg
-                             bg-gray-100 dark:bg-white/5
-                             text-gray-700 dark:text-gray-300
-                             border border-gray-200 dark:border-white/10"
+                                        className="rounded-full border border-line bg-[color-mix(in_srgb,var(--bg)_55%,transparent)] px-3 py-1.5 text-sm text-muted"
                                     >
                                         {item}
-                                    </span>
+                                    </li>
                                 ))}
-                            </div>
-                        </motion.div>
+                            </ul>
+                        </Reveal>
                     ))}
                 </div>
             </div>

@@ -5,27 +5,22 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-                mono: ['JetBrains Mono', 'monospace'],
+                sans: ['Figtree', 'system-ui', 'sans-serif'],
+                display: ['Fraunces', 'Georgia', 'serif'],
             },
-            animation: {
-                'gradient': 'gradient 8s linear infinite',
-                'float': 'float 6s ease-in-out infinite',
-                'glow': 'glow 2s ease-in-out infinite alternate',
+            colors: {
+                canvas: 'var(--bg)',
+                fg: 'var(--fg)',
+                muted: 'var(--muted)',
+                line: 'var(--line)',
+                signal: 'var(--signal)',
+                ink: 'var(--ink)',
             },
-            keyframes: {
-                gradient: {
-                    '0%, 100%': { backgroundPosition: '0% 50%' },
-                    '50%': { backgroundPosition: '100% 50%' },
-                },
-                float: {
-                    '0%, 100%': { transform: 'translateY(0px)' },
-                    '50%': { transform: 'translateY(-20px)' },
-                },
-                glow: {
-                    '0%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.5)' },
-                    '100%': { boxShadow: '0 0 40px rgba(6, 182, 212, 0.8)' },
-                },
+            maxWidth: {
+                page: '1120px',
+            },
+            transitionTimingFunction: {
+                out: 'var(--ease-out)',
             },
         },
     },

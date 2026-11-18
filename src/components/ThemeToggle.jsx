@@ -1,31 +1,29 @@
-import { FiSun, FiMoon } from 'react-icons/fi';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import { useTheme } from '../context/ThemeContext';
+
+const easeOut = [0.23, 1, 0.32, 1];
 
 export default function ThemeToggle() {
     const { theme, toggleTheme } = useTheme();
+    const reduceMotion = useReducedMotion();
 
     return (
-        <motion.button
+        <button
+            type="button"
             onClick={toggleTheme}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="relative p-3 rounded-full glass hover:shadow-lg 
-                 hover:shadow-emerald-500/30 transition-all"
+            className="press inline-flex h-11 w-11 items-center justify-center text-fg"
             aria-label="Toggle theme"
         >
-            <motion.div
+            <motion.span
                 key={theme}
-                initial={{ rotate: -180, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: reduceMotion ? 1 : 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.15, ease: easeOut }}
+                className="inline-flex"
             >
-                {theme === 'dark' ? (
-                    <FiSun className="w-5 h-5 text-yellow-400" />
-                ) : (
-                    <FiMoon className="w-5 h-5 text-emerald-600" />
-                )}
-            </motion.div>
-        </motion.button>
+                {theme === 'dark' ? <FiSun className="h-5 w-5" /> : <FiMoon className="h-5 w-5" />}
+            </motion.span>
+        </button>
     );
 }

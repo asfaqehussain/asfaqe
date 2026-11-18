@@ -1,134 +1,154 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #f4f5f7;
+  --fg: #14171c;
+  --muted: #5c6570;
+  --line: #e2e5ea;
+  --signal: #e85d04;
+  --ink: #14171c;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.dark {
+  --bg: #14171c;
+  --fg: #f4f5f7;
+  --muted: #a7b0ba;
+  --line: #2a3038;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    cursor: url('/cursor.png?v=3') 1 1, auto;
+  }
+
+  a,
+  button,
+  label,
+  summary,
+  [role='button'] {
+    cursor: url('/cursor.png?v=3') 1 1, auto;
+  }
+
+  input,
+  textarea,
+  select,
+  [contenteditable='true'] {
+    cursor: text;
   }
 
   body {
-    @apply font-sans antialiased transition-colors duration-300;
-    @apply bg-white text-gray-900;
+    background: var(--bg);
+    color: var(--fg);
+    @apply font-sans antialiased;
   }
 
-  .dark body {
-    @apply bg-[#060d0d] text-gray-100;
+  :focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
   }
 }
 
 @layer components {
-  .glass {
-    @apply backdrop-blur-xl bg-white/70 dark:bg-white/[0.03] shadow-sm;
+  .atmosphere {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(920px 540px at -8% -12%, rgba(232, 93, 4, 0.28), transparent 58%),
+      radial-gradient(780px 500px at 108% -8%, rgba(67, 104, 232, 0.3), transparent 52%),
+      radial-gradient(680px 460px at 78% 108%, rgba(232, 93, 4, 0.12), transparent 46%);
   }
 
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-teal-400;
+  .dark .atmosphere {
+    background:
+      radial-gradient(960px 560px at -10% -14%, rgba(232, 93, 4, 0.42), transparent 56%),
+      radial-gradient(860px 540px at 112% -6%, rgba(78, 116, 245, 0.42), transparent 54%),
+      radial-gradient(720px 500px at 82% 112%, rgba(232, 93, 4, 0.18), transparent 48%);
   }
 
-  .section-padding {
-    @apply px-6 md:px-12 lg:px-24 py-20;
+  .bg-grid {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, var(--fg) 8%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--fg) 8%, transparent) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse at 50% 20%, black 10%, transparent 72%);
   }
 
-  .gradient-border {
-    position: relative;
-    background: linear-gradient(135deg, #10b981, #06b6d4, #14b8a6);
-    padding: 1px;
-    border-radius: 1rem;
+  .panel {
+    background: color-mix(in srgb, var(--bg) 74%, white 26%);
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+  }
+
+  .dark .panel {
+    background: color-mix(in srgb, var(--bg) 70%, white 10%);
+  }
+
+  .shot img {
+    transition: transform 500ms var(--ease-out);
+  }
+
+  .shell {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1120px;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .shell {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .press {
+    transition: transform 160ms var(--ease-out);
+  }
+
+  .press:active {
+    transform: scale(0.97);
   }
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-900;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #10b981, #06b6d4);
-  border-radius: 9999px;
+  background: var(--line);
+  border-radius: 999px;
 }
 
-/* Grid background */
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .press:active,
+  .shot img {
+    transform: none;
+    transition: none;
+  }
 }
 
-.dark .grid-bg {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-}
-
-/* Blob animation */
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.45;
-  z-index: -1;
-}
-
-/* ── Mouse-tracking gradient border (GlowCard) ──────────────────────── */
-.glow-card {
-  position: relative;
-}
-
-/* The gradient border layer */
-.glow-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1.5px;
-  background: radial-gradient(
-    220px circle at var(--mouse-x) var(--mouse-y),
-    rgba(16, 185, 129, 0.95),
-    rgba(6, 182, 212, 0.7) 30%,
-    rgba(168, 85, 247, 0.4) 55%,
-    transparent 70%
-  );
-  /* Mask so gradient only shows on the 1.5px border strip */
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Soft inner glow at cursor position */
-.glow-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(
-    150px circle at var(--mouse-x) var(--mouse-y),
-    rgba(16, 185, 129, 0.07),
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.glow-card:hover::before,
-.glow-card:hover::after {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .shot:hover img {
+    transform: scale(1.05);
+  }
 }

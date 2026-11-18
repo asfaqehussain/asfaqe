@@ -1,93 +1,114 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
 import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'About', href: '#about' },
-    { name: 'Awards', href: '#awards' },
+    { name: 'Experience', href: '#experience', id: 'experience' },
+    { name: 'Work', href: '#projects', id: 'projects' },
+    { name: 'About', href: '#about', id: 'about' },
 ];
+
+const easeOut = [0.23, 1, 0.32, 1];
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [active, setActive] = useState('');
+    const reduceMotion = useReducedMotion();
 
     useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 20);
-        window.addEventListener('scroll', onScroll);
+        const onScroll = () => setScrolled(window.scrollY > 8);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-    return (
-        <motion.header
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${scrolled ? 'glass shadow-lg py-3' : 'bg-transparent py-5'}`}
-        >
-            <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-                <motion.a
-                    href="#home"
-                    whileHover={{ scale: 1.05 }}
-                    className="text-2xl font-bold gradient-text"
-                >
-                    {'<Dev/>'}
-                </motion.a>
+    useEffect(() => {
+        const nodes = navLinks
+            .map((link) => document.getElementById(link.id))
+            .filter(Boolean);
 
-                {/* Desktop Nav */}
-                <ul className="hidden md:flex items-center gap-8">
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const visible = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+                if (visible) setActive(visible.target.id);
+            },
+            { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+        );
+
+        nodes.forEach((node) => observer.observe(node));
+        return () => observer.disconnect();
+    }, []);
+
+    const linkClass = (id) =>
+        `inline-flex min-h-11 items-center text-sm transition-colors duration-150 ${
+            active === id ? 'text-fg' : 'text-muted hover:text-fg'
+        }`;
+
+    return (
+        <header
+            className={`fixed top-0 left-0 right-0 z-50 ${
+                scrolled
+                    ? 'border-b border-line bg-[color-mix(in_srgb,var(--bg)_78%,transparent)] backdrop-blur-xl'
+                    : 'bg-transparent'
+            }`}
+        >
+            <nav className="shell flex h-16 items-center justify-between">
+                <a href="#home" className="inline-flex min-h-11 items-center text-base font-semibold tracking-tight">
+                    Asfaqe
+                </a>
+
+                <ul className="hidden items-center gap-6 md:flex">
                     {navLinks.map((link) => (
-                        <li key={link.name}>
-                            <a
-                                href={link.href}
-                                className="text-sm font-medium text-gray-700 dark:text-gray-300
-                         hover:text-emerald-600 dark:hover:text-emerald-400
-                         transition-colors relative group"
-                            >
+                        <li key={link.id}>
+                            <a href={link.href} className={linkClass(link.id)} aria-current={active === link.id ? 'true' : undefined}>
                                 {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 
-                               bg-gradient-to-r from-emerald-500 to-cyan-500
-                               group-hover:w-full transition-all duration-300" />
                             </a>
                         </li>
                     ))}
                 </ul>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1">
                     <ThemeToggle />
                     <button
-                        onClick={() => setMenuOpen(!menuOpen)}
-                        className="md:hidden p-2 rounded-lg glass"
+                        type="button"
+                        onClick={() => setMenuOpen((open) => !open)}
+                        className="inline-flex h-11 w-11 items-center justify-center text-fg md:hidden"
+                        aria-expanded={menuOpen}
+                        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
                     >
-                        {menuOpen ? <FiX /> : <FiMenu />}
+                        {menuOpen ? <FiX className="h-5 w-5" /> : <FiMenu className="h-5 w-5" />}
                     </button>
                 </div>
             </nav>
 
-            {/* Mobile Menu */}
             {menuOpen && (
                 <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    className="md:hidden glass mt-3 mx-6 rounded-xl p-4"
+                    initial={reduceMotion ? { opacity: 0 } : { opacity: 0, transform: 'translateY(-8px)' }}
+                    animate={reduceMotion ? { opacity: 1 } : { opacity: 1, transform: 'translateY(0px)' }}
+                    transition={{ duration: 0.2, ease: easeOut }}
+                    className="shell origin-top pb-4 md:hidden"
+                    style={{ transformOrigin: 'top' }}
                 >
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            onClick={() => setMenuOpen(false)}
-                            className="block py-3 px-4 text-gray-700 dark:text-gray-300
-                       hover:bg-emerald-500/10 rounded-lg transition-colors"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                    <ul className="border-t border-line pt-2">
+                        {navLinks.map((link) => (
+                            <li key={link.id}>
+                                <a
+                                    href={link.href}
+                                    onClick={() => setMenuOpen(false)}
+                                    className={`${linkClass(link.id)} w-full`}
+                                    aria-current={active === link.id ? 'true' : undefined}
+                                >
+                                    {link.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </motion.div>
             )}
-        </motion.header>
+        </header>
     );
 }
