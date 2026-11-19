@@ -1,4 +1,5 @@
 import { personalInfo } from '../data/portfolioData';
+import MaskText from './MaskText';
 import Reveal from './Reveal';
 
 export default function About() {
@@ -7,8 +8,10 @@ export default function About() {
             <div className="shell">
                 <Reveal>
                     <p className="text-sm text-signal">Profile</p>
-                    <h2 className="mt-2 font-display text-3xl font-semibold leading-[1.15] md:text-4xl">About</h2>
                 </Reveal>
+                <MaskText className="mt-2 font-display text-3xl font-semibold leading-[1.15] md:text-4xl">
+                    About
+                </MaskText>
 
                 <div className="mt-10 grid gap-4 lg:grid-cols-[1.4fr_0.8fr]">
                     <Reveal className="panel p-6 md:p-8">

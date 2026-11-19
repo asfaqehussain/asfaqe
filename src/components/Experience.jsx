@@ -1,16 +1,34 @@
+import { useRef } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { experience } from '../data/portfolioData';
+import MaskText from './MaskText';
 import Reveal from './Reveal';
 
 export default function Experience() {
+    const listRef = useRef(null);
+    const reduceMotion = useReducedMotion();
+    const { scrollYProgress } = useScroll({
+        target: listRef,
+        offset: ['start 80%', 'end 40%'],
+    });
+    const scale = useTransform(scrollYProgress, [0, 1], ['scaleY(0)', 'scaleY(1)']);
+
     return (
         <section id="experience" className="scroll-mt-20 py-16 md:py-24">
             <div className="shell">
                 <Reveal>
                     <p className="text-sm text-signal">Career</p>
-                    <h2 className="mt-2 font-display text-3xl font-semibold leading-[1.15] md:text-4xl">Experience</h2>
                 </Reveal>
+                <MaskText className="mt-2 font-display text-3xl font-semibold leading-[1.15] md:text-4xl">
+                    Experience
+                </MaskText>
 
-                <ol className="mt-10 space-y-4">
+                <ol ref={listRef} className="relative mt-10 space-y-4">
+                    <motion.div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-y-0 left-0 w-px origin-top bg-line"
+                        style={{ transform: reduceMotion ? 'scaleY(1)' : scale, transformOrigin: 'top' }}
+                    />
                     {experience.map((job, index) => (
                         <li key={job.id}>
                             <Reveal delay={index * 0.05} className="panel grid gap-4 p-5 md:grid-cols-[auto_1fr] md:p-7">

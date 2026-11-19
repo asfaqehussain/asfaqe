@@ -43,8 +43,8 @@ export default function Header() {
         return () => observer.disconnect();
     }, []);
 
-    const linkClass = (id) =>
-        `inline-flex min-h-11 items-center text-sm transition-colors duration-150 ${
+    const linkClass = (id, desktop = false) =>
+        `inline-flex min-h-11 items-center text-sm transition-colors duration-150 ${desktop ? 'nav-link' : ''} ${
             active === id ? 'text-fg' : 'text-muted hover:text-fg'
         }`;
 
@@ -64,7 +64,7 @@ export default function Header() {
                 <ul className="hidden items-center gap-6 md:flex">
                     {navLinks.map((link) => (
                         <li key={link.id}>
-                            <a href={link.href} className={linkClass(link.id)} aria-current={active === link.id ? 'true' : undefined}>
+                            <a href={link.href} className={linkClass(link.id, true)} aria-current={active === link.id ? 'true' : undefined}>
                                 {link.name}
                             </a>
                         </li>
@@ -76,7 +76,7 @@ export default function Header() {
                     <button
                         type="button"
                         onClick={() => setMenuOpen((open) => !open)}
-                        className="inline-flex h-11 w-11 items-center justify-center text-fg md:hidden"
+                        className="press inline-flex h-11 w-11 items-center justify-center text-fg md:hidden"
                         aria-expanded={menuOpen}
                         aria-label={menuOpen ? 'Close menu' : 'Open menu'}
                     >

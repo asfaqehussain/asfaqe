@@ -1,4 +1,5 @@
 import { projects } from '../data/portfolioData';
+import MaskText from './MaskText';
 import Reveal from './Reveal';
 
 export default function Projects() {
@@ -7,16 +8,19 @@ export default function Projects() {
             <div className="shell">
                 <Reveal>
                     <p className="text-sm text-signal">Selected work</p>
-                    <h2 className="mt-2 font-display text-3xl font-semibold leading-[1.15] md:text-4xl">Apps in the wild</h2>
                 </Reveal>
+                <MaskText className="mt-2 font-display text-3xl font-semibold leading-[1.15] md:text-4xl">
+                    Apps in the wild
+                </MaskText>
 
                 <ul className="mt-10 grid gap-6 md:grid-cols-2">
                     {projects.map((project, index) => {
                         const contain = project.fit === 'contain';
 
                         return (
-                            <li key={project.id}>
-                                <Reveal delay={index * 0.05} className="panel overflow-hidden">
+                            <li key={project.id} className="h-full">
+                                <Reveal delay={index * 0.05} className="h-full">
+                                <div className="project-card panel h-full overflow-hidden">
                                 {project.image ? (
                                     <div
                                         className="shot relative flex h-64 items-center justify-center overflow-hidden"
@@ -52,9 +56,12 @@ export default function Projects() {
                                                             href={link.href}
                                                             target="_blank"
                                                             rel="noreferrer"
-                                                            className="inline-flex min-h-11 items-center text-sm text-fg transition-colors duration-150 hover:text-signal"
+                                                            className="inline-flex min-h-11 items-center gap-1 text-sm text-fg transition-colors duration-150 hover:text-signal"
                                                         >
                                                             {link.label}
+                                                            <span className="link-arrow" aria-hidden="true">
+                                                                →
+                                                            </span>
                                                         </a>
                                                     ))}
                                                 </div>
@@ -72,6 +79,7 @@ export default function Projects() {
                                             </li>
                                         ))}
                                     </ul>
+                                </div>
                                 </div>
                                 </Reveal>
                             </li>

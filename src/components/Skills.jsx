@@ -1,4 +1,5 @@
 import { skills } from '../data/portfolioData';
+import MaskText from './MaskText';
 import Reveal from './Reveal';
 
 export default function Skills() {
@@ -7,8 +8,10 @@ export default function Skills() {
             <div className="shell">
                 <Reveal>
                     <p className="text-sm text-signal">Toolkit</p>
-                    <h2 className="mt-2 font-display text-3xl font-semibold leading-[1.15] md:text-4xl">Skills</h2>
                 </Reveal>
+                <MaskText className="mt-2 font-display text-3xl font-semibold leading-[1.15] md:text-4xl">
+                    Skills
+                </MaskText>
 
                 <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     {skills.map((group, index) => (
@@ -18,7 +21,7 @@ export default function Skills() {
                                 {group.items.map((item) => (
                                     <li
                                         key={item}
-                                        className="rounded-full border border-line bg-[color-mix(in_srgb,var(--bg)_55%,transparent)] px-3 py-1.5 text-sm text-muted"
+                                        className="chip rounded-full border border-line bg-[color-mix(in_srgb,var(--bg)_55%,transparent)] px-3 py-1.5 text-sm text-muted"
                                     >
                                         {item}
                                     </li>
